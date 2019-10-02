@@ -27,18 +27,16 @@ export default function Profile() {
       <Form schema={schema} initialData={profile} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Nome completo" />
         <Input name="email" type="email" placeholder="Seu endereço de email" />
-
         <hr />
-
         <Input
-          type="password"
           name="oldPassword"
+          type="password"
           placeholder="Sua senha atual"
         />
-        <Input type="password" name="password" placeholder="Nova senha" />
+        <Input name="password" type="password" placeholder="Nova senha" />
         <Input
-          type="password"
           name="confirmPassword"
+          type="password"
           placeholder="Confirmar senha"
         />
         <button type="submit">Atualizar perfil</button>

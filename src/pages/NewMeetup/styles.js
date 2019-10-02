@@ -45,7 +45,7 @@ export const Container = styled.div`
       }
     }
 
-    > a {
+    > button {
       height: 42px;
       width: 170px;
       border: 0;

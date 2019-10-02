@@ -9,7 +9,7 @@ import api from '~/services/api';
 import { Container, Meetup } from './styles';
 
 export default function Dashboard() {
-  const [meetup, setMeetup] = useState([]);
+  const [meetups, setMeetups] = useState([]);
 
   useEffect(() => {
     async function loadMeetups() {
@@ -22,13 +22,11 @@ export default function Dashboard() {
         }),
       }));
 
-      setMeetup(data);
+      setMeetups(data);
     }
 
     loadMeetups();
   }, []);
-
-  console.tron.log(meetup);
 
   return (
     <Container>
@@ -41,14 +39,14 @@ export default function Dashboard() {
       </header>
 
       <ul>
-        {meetup.map(m => (
-          <Meetup key={m.id}>
-            <strong>{m.title}</strong>
+        {meetups.map(meetup => (
+          <Meetup key={meetup.id}>
+            <strong>{meetup.title}</strong>
             <div>
-              <span>{m.formattedDate}</span>
-              <button type="button">
+              <span>{meetup.formattedDate}</span>
+              <Link to={`/details/${meetup.id}`} meetup={meetup}>
                 <MdChevronRight size={25} color="#FFF" />
-              </button>
+              </Link>
             </div>
           </Meetup>
         ))}

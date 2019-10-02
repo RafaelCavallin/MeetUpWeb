@@ -37,9 +37,11 @@ export function* signUp({ payload }) {
       email,
       password,
     });
+    toast.error('Usuário criado com sucesso.');
+
     history.push('/');
   } catch (err) {
-    toast.error('Falha no cadastro, verifique seus dados');
+    toast.success('Falha no cadastro, verifique seus dados');
     yield put(signFailure());
   }
 }
