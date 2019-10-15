@@ -7,21 +7,17 @@ import { Container } from './styles';
 
 import { newMeetupRequest } from '~/store/modules/meetup/actions';
 
-import AvatarInput from './AvatarInput';
-
 export default function NewMeetup() {
   const dispatch = useDispatch();
 
-  function handleSubmit({ avatar_id, title, description, date, location }) {
-    // dispatch(newMeetupRequest(avatar_id, title, description, date, location));
-    console.log({ avatar_id, title, description, date, location });
+  function handleSubmit({ file_id, title, description, date, location }) {
+    dispatch(newMeetupRequest(file_id, title, description, date, location));
   }
 
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <AvatarInput name="avatar_id" />
-
+        <Input name="file_id" placeholder="file_id" />
         <Input name="title" placeholder="Título do Meetup" />
         <Input name="description" placeholder="Descrição do Meetup" />
         <Input name="date" placeholder="Data do Meetup" />

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   align-self: center;
   margin-bottom: 30px;
+  border: none;
 
   label {
     cursor: pointer;
@@ -12,9 +13,8 @@ export const Container = styled.div`
     }
 
     img {
-      height: 120px;
-      width: 120px;
-      background: #eee;
+      height: 300px;
+      width: 800px;
     }
 
     input {

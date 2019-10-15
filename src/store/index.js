@@ -5,6 +5,7 @@ import createStore from './createStore';
 import persistReducer from './persistReducers';
 
 import rootReducer from './modules/rootReducer';
+// eslint-disable-next-line import/no-cycle
 import rootSaga from './modules/rootSaga';
 
 const sagaMonitor =

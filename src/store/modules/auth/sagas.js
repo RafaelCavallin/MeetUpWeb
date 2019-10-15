@@ -51,6 +51,8 @@ export function setToken({ payload }) {
 
   const { token } = payload.auth;
 
+  console.tron.log(token);
+
   if (token) {
     api.defaults.headers.Authorization = `Bearer ${token}`;
   }

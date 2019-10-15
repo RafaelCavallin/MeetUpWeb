@@ -1,7 +1,7 @@
-export function newMeetupRequest(data) {
+export function newMeetupRequest(file_id, title, description, date, location) {
   return {
     type: '@meetup/NEW_MEETUP_REQUEST',
-    payload: { data },
+    payload: { file_id, title, description, date, location },
   };
 }
 
